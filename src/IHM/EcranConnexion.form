@@ -113,20 +113,17 @@
         <Property name="text" type="java.lang.String" value="Mot de passe"/>
       </Properties>
     </Component>
+    <Component class="javax.swing.JPasswordField" name="txtMdp">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtNom">
+    </Component>
     <Component class="javax.swing.JButton" name="btnValider">
       <Properties>
         <Property name="text" type="java.lang.String" value="Valider"/>
       </Properties>
-      <AccessibilityProperties>
-        <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="btnValider"/>
-      </AccessibilityProperties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="EcranConnexion_btnValider"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.swing.JPasswordField" name="txtMdp">
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtNom">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="actionBtnValider"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

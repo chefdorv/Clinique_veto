@@ -37,9 +37,9 @@ public class EcranConnexion extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         label1 = new java.awt.Label();
         label2 = new java.awt.Label();
-        btnValider = new javax.swing.JButton();
         txtMdp = new javax.swing.JPasswordField();
         txtNom = new javax.swing.JTextField();
+        btnValider = new javax.swing.JButton();
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -55,6 +55,11 @@ public class EcranConnexion extends javax.swing.JFrame {
         label2.setText("Mot de passe");
 
         btnValider.setText("Valider");
+        btnValider.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionBtnValider(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -101,13 +106,11 @@ public class EcranConnexion extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        btnValider.getAccessibleContext().setAccessibleName("btnValider");
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
-        private void actionBtnValider() {
-        btnValider.addActionListener(new ActionListener() {
+
+    private void actionBtnValider(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actionBtnValider
+       btnValider.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -118,7 +121,8 @@ public class EcranConnexion extends javax.swing.JFrame {
                 }
             }
         });
-    }
+    }//GEN-LAST:event_actionBtnValider
+
     
     public static void main(String args[]) {
         try {
