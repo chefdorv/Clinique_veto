@@ -1,32 +1,40 @@
 package BLL;
 
+import BO.Personnel;
 import DAL.DALException;
 import DAL.DAOFactory;
 import DAL.PersonnelsDAO;
 
+import java.util.List;
+
 public class LoginManager {
+    private PersonnelsDAO daoPersonnels;
+    private List<Personnel> listePersonnels;
+    private static LoginManager instance = null;
 
-    PersonnelsDAO personnelsDao;
-
-    public LoginManager() {
-        personnelsDao = DAOFactory.getPersonnelsDAO();
-    }
-
-    public String Login(String name, String password) throws Exception {
-        String role = "vide";
+    private LoginManager() throws BLLException {
+        daoPersonnels = DAOFactory.getPersonnelsDAO();
+        // Charger la liste de personnels
         try {
-            FieldVerif.VerifPersoName(name);
-            FieldVerif.VerifPersoPassword(password);
-
-            role = personnelsDao.Login(name, password);
-
-        } catch (DALException | BLLException e) {
-            // TODO Auto-generated catch block
-
-            throw e;
+            listePersonnels = daoPersonnels.selectAll();
+        } catch (DALException e) {
+            throw new BLLException("Echec du chargement de la liste des personnels - ", e);
         }
-        return role;
     }
 
+    public static LoginManager getInstance() throws BLLException {
+        if (instance == null) {
+            instance = new LoginManager();
+        }
+        return instance;
+    }
 
+    public Personnel getPersonnel(int codePers) throws BLLException {
+
+        return listePersonnels.get(codePers);
+    }
+
+    public List<Personnel> getListePersonnels() throws BLLException {
+        return listePersonnels;
+    }
 }
