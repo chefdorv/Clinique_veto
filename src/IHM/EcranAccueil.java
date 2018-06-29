@@ -27,17 +27,60 @@ public class EcranAccueil extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuBar = new javax.swing.JMenuBar();
+        menuFichier = new javax.swing.JMenu();
+        menuItemDeconnexion = new javax.swing.JMenuItem();
+        menuItemFermer = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        menuItemPriseDeRDV = new javax.swing.JMenuItem();
+        menuItemGestionDesClients = new javax.swing.JMenuItem();
+        menuAgenda = new javax.swing.JMenu();
+        menuGestionPersonnel = new javax.swing.JMenu();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(800, 400));
+
+        menuFichier.setText("Fichier");
+        menuFichier.setMargin(new java.awt.Insets(0, 5, 0, 5));
+
+        menuItemDeconnexion.setLabel("Déconnexion");
+        menuFichier.add(menuItemDeconnexion);
+
+        menuItemFermer.setLabel("Fermer");
+        menuFichier.add(menuItemFermer);
+
+        jMenuBar.add(menuFichier);
+
+        jMenu1.setText("Gestion des rendez-vous");
+        jMenu1.setMargin(new java.awt.Insets(0, 5, 0, 5));
+
+        menuItemPriseDeRDV.setText("Prise de rendez-vous");
+        jMenu1.add(menuItemPriseDeRDV);
+
+        menuItemGestionDesClients.setText("Gestion des clients");
+        jMenu1.add(menuItemGestionDesClients);
+
+        jMenuBar.add(jMenu1);
+
+        menuAgenda.setLabel("Agenda");
+        menuAgenda.setMargin(new java.awt.Insets(0, 5, 0, 5));
+        jMenuBar.add(menuAgenda);
+
+        menuGestionPersonnel.setLabel("Gestion du personnel");
+        menuGestionPersonnel.setMargin(new java.awt.Insets(0, 5, 0, 5));
+        jMenuBar.add(menuGestionPersonnel);
+
+        setJMenuBar(jMenuBar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 800, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 430, Short.MAX_VALUE)
         );
 
         pack();
@@ -79,5 +122,14 @@ public class EcranAccueil extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenuBar jMenuBar;
+    private javax.swing.JMenu menuAgenda;
+    private javax.swing.JMenu menuFichier;
+    private javax.swing.JMenu menuGestionPersonnel;
+    private javax.swing.JMenuItem menuItemDeconnexion;
+    private javax.swing.JMenuItem menuItemFermer;
+    private javax.swing.JMenuItem menuItemGestionDesClients;
+    private javax.swing.JMenuItem menuItemPriseDeRDV;
     // End of variables declaration//GEN-END:variables
 }

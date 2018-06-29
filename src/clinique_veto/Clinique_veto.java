@@ -5,6 +5,9 @@
  */
 package clinique_veto;
 
+import IHM.EcranConnexion;
+import javax.swing.SwingUtilities;
+
 /**
  *
  * @author Administrateur
@@ -15,7 +18,19 @@ public class Clinique_veto {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+
+        SwingUtilities.invokeLater(new Runnable() {
+
+            @Override
+            public void run() {
+
+                /* **** OUVERTURE DE L'APPLI **** */
+                EcranConnexion maConnection = new EcranConnexion();
+                maConnection.setVisible(true);
+
+            }
+        });
+
     }
     
 }
