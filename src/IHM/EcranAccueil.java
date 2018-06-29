@@ -5,6 +5,8 @@
  */
 package IHM;
 
+import BLL.LoginController;
+
 /**
  *
  * @author Administrateur
@@ -16,6 +18,10 @@ public class EcranAccueil extends javax.swing.JFrame {
      */
     public EcranAccueil() {
         initComponents();
+    }
+
+    public EcranAccueil(LoginController aThis) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
