@@ -15,9 +15,6 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 public class EcranConnexion extends javax.swing.JFrame {
-
-
-    private LoginController lg;
     
     public EcranConnexion() {
         initComponents();
