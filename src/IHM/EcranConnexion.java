@@ -3,16 +3,8 @@ package IHM;
 
 import BLL.BLLException;
 import BLL.LoginController;
-import BLL.LoginManager;
-import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javafx.scene.control.PasswordField;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
 
 public class EcranConnexion extends javax.swing.JFrame {
 
@@ -110,17 +102,11 @@ public class EcranConnexion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void actionBtnValider(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actionBtnValider
-       btnValider.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
                 try {
                     LoginController.get().connexion(txtNom, txtMdp);
                 } catch (BLLException e1) {
                     e1.printStackTrace();
                 }
-            }
-        });
     }//GEN-LAST:event_actionBtnValider
 
     
