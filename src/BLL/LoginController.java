@@ -54,7 +54,7 @@ public class LoginController {
     }
 
     public void startApp() {
-        ecranConnexion = new EcranConnexion(this);
+        ecranConnexion = new EcranConnexion(persoConnected);
         ecranConnexion.setVisible(true);
     }
 

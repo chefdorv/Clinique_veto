@@ -6,6 +6,7 @@
 package IHM;
 
 import BLL.LoginController;
+import BO.Personnel;
 
 /**
  *
@@ -16,12 +17,17 @@ public class EcranAccueil extends javax.swing.JFrame {
     /**
      * Creates new form EcranAccueil
      */
+    
+    private Personnel user;
+            
     public EcranAccueil() {
         initComponents();
     }
 
-    public EcranAccueil(LoginController aThis) {
+    public EcranAccueil(Personnel user) {
         initComponents();
+        this.user = user;
+        this.labelUser.setText(user.getNom());
     }
 
     /**
@@ -33,6 +39,7 @@ public class EcranAccueil extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        labelUser = new javax.swing.JLabel();
         jMenuBar = new javax.swing.JMenuBar();
         menuFichier = new javax.swing.JMenu();
         menuItemDeconnexion = new javax.swing.JMenuItem();
@@ -45,6 +52,8 @@ public class EcranAccueil extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(800, 400));
+
+        labelUser.setText("labelUser");
 
         menuFichier.setText("Fichier");
         menuFichier.setMargin(new java.awt.Insets(0, 5, 0, 5));
@@ -82,11 +91,15 @@ public class EcranAccueil extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 756, Short.MAX_VALUE)
+                .addComponent(labelUser))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 430, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 416, Short.MAX_VALUE)
+                .addComponent(labelUser))
         );
 
         pack();
@@ -130,6 +143,7 @@ public class EcranAccueil extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar;
+    private javax.swing.JLabel labelUser;
     private javax.swing.JMenu menuAgenda;
     private javax.swing.JMenu menuFichier;
     private javax.swing.JMenu menuGestionPersonnel;
