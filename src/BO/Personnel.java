@@ -3,6 +3,7 @@ package BO;
 public class Personnel {
     private Integer code;
     private String nom;
+    private String prenom;
     private String mdp;
     private String role;
     private Boolean archive;
@@ -10,16 +11,18 @@ public class Personnel {
     public Personnel() {
     }
 
-    public Personnel(Integer code, String nom, String mdp, String role, Boolean archive) {
+    public Personnel(Integer code, String nom, String prenom, String mdp, String role, Boolean archive) {
         this.code = code;
         this.nom = nom;
+        this.prenom = prenom;
         this.mdp = mdp;
         this.role = role;
         this.archive = archive;
     }
 
-    public Personnel(String nom, String mdp, String role, Boolean archive) {
+    public Personnel(String nom, String prenom, String mdp, String role, Boolean archive) {
         this.nom = nom;
+        this.prenom = prenom;
         this.mdp = mdp;
         this.role = role;
         this.archive = archive;
@@ -39,6 +42,14 @@ public class Personnel {
 
     public void setNom(String nom) {
         this.nom = nom;
+    }
+    
+        public String getPrenom() {
+        return prenom;
+    }
+
+    public void setPrenom(String Prenom) {
+        this.prenom = prenom;
     }
 
     public String getMdp() {
@@ -67,7 +78,7 @@ public class Personnel {
 
     @Override
     public String toString() {
-        return "Personnels [CodePerso=" + code + ", Nom=" + nom + ", MotPasse=" + mdp + ", Role=" + role
+        return "Personnels [CodePerso=" + code + ", Nom=" + nom + ", Prenom=" + prenom + ", MotPasse=" + mdp + ", Role=" + role
                 + ", Archive=" + archive + "]";
     }
 

@@ -15,7 +15,7 @@ public class AppliTestIHM {
             public void run() {
 
                 /* **** OUVERTURE DE L'APPLI **** */
-                EcranAccueil maConnection = new EcranAccueil();
+                EcranGestionPersonnel maConnection = new EcranGestionPersonnel();
                 maConnection.setVisible(true);
 
             }

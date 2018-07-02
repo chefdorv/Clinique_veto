@@ -100,7 +100,7 @@ public class PersonnelDAOjdbcImpl implements PersonnelsDAO {
             rs = rqt.executeQuery();
             if (rs.next()) {
                 try {
-                    perso = new Personnel(rs.getInt("Code"), rs.getString("Nom"), rs.getString("Mot de passe"), rs.getString("Role"), rs.getBoolean("Archive"));
+                    perso = new Personnel(rs.getInt("Code"), rs.getString("Nom"),rs.getString("Prenom"), rs.getString("Mot de passe"), rs.getString("Role"), rs.getBoolean("Archive"));
                 } catch (SQLException e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
@@ -205,7 +205,7 @@ public class PersonnelDAOjdbcImpl implements PersonnelsDAO {
             rs = rqt.executeQuery();
             while (rs.next()) {
                 try {
-                    perso = new Personnel(rs.getInt("CodePers"), rs.getString("Nom"),
+                    perso = new Personnel(rs.getInt("CodePers"), rs.getString("Nom"), rs.getString("Prenom"),
                             rs.getString("MotPasse"), rs.getString("Role"), rs.getBoolean("Archive"));
                     lstPerso.add(perso);
                 } catch (SQLException e) {
