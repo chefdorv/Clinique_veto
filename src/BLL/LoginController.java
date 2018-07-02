@@ -54,7 +54,7 @@ public class LoginController {
     }
 
     public void startApp() {
-        ecranConnexion = new EcranConnexion(persoConnected);
+        ecranConnexion = new EcranConnexion(this);
         ecranConnexion.setVisible(true);
     }
 
@@ -75,7 +75,7 @@ public class LoginController {
         if (isPresent) {
             System.out.println("ok");
 
-            ecranAccueil = new EcranAccueil(this);
+            ecranAccueil = new EcranAccueil(persoConnected);
             ecranAccueil.setVisible(true);
             ecranConnexion.setVisible(false);
         } else
