@@ -3,11 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Ws/Clinique_veto/src/IHM/AppliTestIHM.java</file>
-            <file>file:/C:/Ws/Clinique_veto/src/IHM/EcranConnexion.java</file>
-            <file>file:/C:/Ws/Clinique_veto/src/BLL/LoginController.java</file>
-            <file>file:/C:/Ws/Clinique_veto/src/DAL/DAOFactory.java</file>
-            <file>file:/C:/Ws/Clinique_veto/src/BLL/LoginManager.java</file>
+            <file>file:/C:/Users/Administrateur/Desktop/workspace/Clinique_veto/src/DAL/JdbcTools.java</file>
+            <file>file:/C:/Users/Administrateur/Desktop/workspace/Clinique_veto/src/BLL/LoginManager.java</file>
+            <file>file:/C:/Users/Administrateur/Desktop/workspace/Clinique_veto/src/IHM/AppliTestIHM.java</file>
+            <file>file:/C:/Users/Administrateur/Desktop/workspace/Clinique_veto/src/DAL/jdbc/PersonnelDAOjdbcImpl.java</file>
+            <file>file:/C:/Users/Administrateur/Desktop/workspace/Clinique_veto/src/IHM/EcranConnexion.java</file>
+            <file>file:/C:/Users/Administrateur/Desktop/workspace/Clinique_veto/src/IHM/EcranGestionPersonnel.java</file>
+            <file>file:/C:/Users/Administrateur/Desktop/workspace/Clinique_veto/src/clinique_veto/Clinique_veto.java</file>
+            <file>file:/C:/Users/Administrateur/Desktop/workspace/Clinique_veto/src/IHM/EcranAccueil.java</file>
+            <file>file:/C:/Users/Administrateur/Desktop/workspace/Clinique_veto/src/BLL/LoginController.java</file>
         </group>
     </open-files>
 </project-private>
