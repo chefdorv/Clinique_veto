@@ -17,11 +17,11 @@ public class AppliTestDAL {
 		try {
 			con = JdbcTools.getConnection();
 
-			rqt = con.prepareStatement("select * from Clients");
+			rqt = con.prepareStatement("select * from Personnels");
 			rs = rqt.executeQuery();
 
 			if (rs.next()) {
-				System.out.println(rs.getString("NomClient"));
+				System.out.println(rs.getString("Nom"));
 			}
 
 		} catch (SQLException e) {

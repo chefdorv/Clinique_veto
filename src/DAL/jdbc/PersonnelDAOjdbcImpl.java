@@ -53,8 +53,8 @@ public class PersonnelDAOjdbcImpl implements PersonnelsDAO {
     @Override
     public String Login(String name, String password) throws DALException, BLLException {
 
-        String role = "vide";
-        Connection cnx = null;
+        String role = "vide"; 
+       Connection cnx = null;
         PreparedStatement rqt = null;
         ResultSet rs = null;
         try {

@@ -21,7 +21,7 @@ public class EcranAccueil extends javax.swing.JFrame {
     }
 
     public EcranAccueil(LoginController aThis) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        initComponents();
     }
 
     /**
