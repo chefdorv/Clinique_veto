@@ -4,10 +4,18 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Ws/Clinique_veto/src/IHM/AppliTestIHM.java</file>
-            <file>file:/C:/Ws/Clinique_veto/src/IHM/EcranConnexion.java</file>
             <file>file:/C:/Ws/Clinique_veto/src/BLL/LoginController.java</file>
-            <file>file:/C:/Ws/Clinique_veto/src/DAL/DAOFactory.java</file>
+            <file>file:/C:/Ws/Clinique_veto/src/DAL/jdbc/PersonnelDAOjdbcImpl.java</file>
+            <file>file:/C:/Ws/Clinique_veto/src/DAL/JdbcTools.java</file>
+            <file>file:/C:/Ws/Clinique_veto/src/IHM/EcranAccueil.java</file>
+            <file>file:/C:/Ws/Clinique_veto/src/BO/Personnel.java</file>
+            <file>file:/C:/Ws/Clinique_veto/src/IHM/EcranConnexion.java</file>
+            <file>file:/C:/Ws/Clinique_veto/src/BLL/BLLException.java</file>
+            <file>file:/C:/Ws/Clinique_veto/src/BLL/FieldVerif.java</file>
+            <file>file:/C:/Ws/Clinique_veto/src/DAL/PersonnelsDAO.java</file>
+            <file>file:/C:/Ws/Clinique_veto/src/DAL/AppliTestDAL.java</file>
             <file>file:/C:/Ws/Clinique_veto/src/BLL/LoginManager.java</file>
+            <file>file:/C:/Ws/Clinique_veto/src/DAL/Settings.properties</file>
         </group>
     </open-files>
 </project-private>
