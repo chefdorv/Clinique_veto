@@ -1,5 +1,6 @@
 package IHM;
 
+import IHM.Personnel.EcranGestionPersonnel;
 import javax.swing.SwingUtilities;
 
 import IHM.EcranConnexion;
