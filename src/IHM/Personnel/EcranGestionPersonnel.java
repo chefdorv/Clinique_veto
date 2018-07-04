@@ -5,8 +5,15 @@
  */
 package IHM.Personnel;
 
+import BLL.BLLException;
 import IHM.GestionPersonnelController;
-
+import BLL.GestionPersonnelManager;
+import BO.Personnel;
+import DAL.DALException;
+import java.util.List;
+import java.util.ArrayList;
+import javax.swing.table.AbstractTableModel;
+import javax.swing.table.TableModel;
 
 /**
  *
@@ -25,7 +32,60 @@ public class EcranGestionPersonnel extends javax.swing.JFrame {
         gestionPersonnelController = gestionPersonnelController;
         initComponents();
     }
+public TableModel initTableModel() {
+		String[] personnels = { "Nom", "Prenom", "Role", "Login" };
+		TableModel dataModel = new AbstractTableModel() {
+			public int getColumnCount() {
+				return 4;
+			}
 
+			public int getRowCount() {
+                                int cnt = 0;
+				try {
+                                    GestionPersonnelManager pm = new GestionPersonnelManager();
+                                    cnt = pm.getListePersonnels().size();
+				} catch (BLLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				return cnt;
+			}
+
+			@Override
+			public String getColumnName(int index) {
+				return personnels[index];
+			}
+
+    public Object getValueAt(int row, int col) {
+				try {
+                                    GestionPersonnelManager pm = new GestionPersonnelManager();
+                                    List<Personnel> lstPerso = new ArrayList<Personnel>();
+                                    lstPerso = pm.getListePersonnels();
+                                    switch (col) {
+					case 0:
+						return lstPerso.get(row).getNom();
+					case 1:
+						return lstPerso.get(row).getPrenom();
+					case 2:
+						return lstPerso.get(row).getRole();
+					case 3:
+						return lstPerso.get(row).getMdp();
+					default:
+						break;
+                                    }
+				} catch (BLLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+                                
+				return "erreur";
+			}
+    
+		};
+
+		return dataModel;
+	}
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

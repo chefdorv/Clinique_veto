@@ -21,7 +21,7 @@ public class GestionPersonnelManager {
     private List<Personnel> listePersonnels;
     private static GestionPersonnelManager instance = null;
 
-    private GestionPersonnelManager() throws BLLException {
+    public GestionPersonnelManager() throws BLLException {
         daoPersonnels = DAOFactory.getPersonnelDAO();
         // Charger la liste de personnels
         try {
