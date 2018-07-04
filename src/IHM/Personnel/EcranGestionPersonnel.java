@@ -27,66 +27,65 @@ public class EcranGestionPersonnel extends javax.swing.JFrame {
     public EcranGestionPersonnel() {
         initComponents();
     }
-    
+
     public EcranGestionPersonnel(GestionPersonnelController gestionPersonnelController) {
         gestionPersonnelController = gestionPersonnelController;
         initComponents();
     }
-public TableModel initTableModel() {
-		String[] personnels = { "Nom", "Prenom", "Role", "Login" };
-		TableModel dataModel = new AbstractTableModel() {
-			public int getColumnCount() {
-				return 4;
-			}
 
-			public int getRowCount() {
-                                int cnt = 0;
-				try {
-                                    GestionPersonnelManager pm = new GestionPersonnelManager();
-                                    cnt = pm.getListePersonnels().size();
-				} catch (BLLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				return cnt;
-			}
+    public TableModel initTableModel() {
+        String[] personnels = {"Nom", "Prenom", "Role", "Mdp"};
+        TableModel dataModel = new AbstractTableModel() {
+            
+            public int getColumnCount() {
+                return 4;
+            }
 
-			@Override
-			public String getColumnName(int index) {
-				return personnels[index];
-			}
+            public int getRowCount() {
+                int cnt = 0;
+                try {
+                    GestionPersonnelManager pm = new GestionPersonnelManager();
+                    cnt = pm.getListePersonnels().size();
+                } catch (BLLException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+                return cnt;
+            }
 
-    public Object getValueAt(int row, int col) {
-				try {
-                                    GestionPersonnelManager pm = new GestionPersonnelManager();
-                                    List<Personnel> lstPerso = new ArrayList<Personnel>();
-                                    lstPerso = pm.getListePersonnels();
-                                    switch (col) {
-					case 0:
-						return lstPerso.get(row).getNom();
-					case 1:
-						return lstPerso.get(row).getPrenom();
-					case 2:
-						return lstPerso.get(row).getRole();
-					case 3:
-						return lstPerso.get(row).getMdp();
-					default:
-						break;
-                                    }
-				} catch (BLLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-                                
-				return "erreur";
-			}
-    
-		};
+            @Override
+            public String getColumnName(int index) {
+                return personnels[index];
+            }
 
-                
-		return dataModel;
-	}
-    
+            public Object getValueAt(int row, int col) {
+                try {
+                    GestionPersonnelManager pm = new GestionPersonnelManager();
+                    List<Personnel> lstPerso = new ArrayList<Personnel>();
+                    lstPerso = pm.getListePersonnels();
+                    switch (col) {
+                        case 0:
+                            return lstPerso.get(row).getNom();
+                        case 1:
+                            return lstPerso.get(row).getPrenom();
+                        case 2:
+                            return lstPerso.get(row).getRole();
+                        case 3:
+                            return lstPerso.get(row).getMdp();
+                        default:
+                            break;
+                    }
+                } catch (BLLException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+
+                return "erreur";
+            }
+        };
+        return dataModel;
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -104,17 +103,15 @@ public TableModel initTableModel() {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        lblNom = new javax.swing.JLabel();
-        lblRole1 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        lblPrenom = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tablePersonnel = new javax.swing.JTable(initTableModel());
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Gestion du personnel");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        btnAjouter.setIcon(new javax.swing.ImageIcon("C:\\Ws\\Clinique_veto\\Images\\ajouter.png")); // NOI18N
+        btnAjouter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Ressources/ajouter.png"))); // NOI18N
         btnAjouter.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnAjouter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,9 +119,9 @@ public TableModel initTableModel() {
             }
         });
 
-        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Ws\\Clinique_veto\\Images\\supprimer.png")); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Ressources/supprimer.png"))); // NOI18N
 
-        jButton3.setIcon(new javax.swing.ImageIcon("C:\\Ws\\Clinique_veto\\Images\\reini.png")); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Ressources/reini.png"))); // NOI18N
 
         jLabel1.setText("Ajouter");
 
@@ -150,7 +147,7 @@ public TableModel initTableModel() {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(jLabel2)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
@@ -174,16 +171,26 @@ public TableModel initTableModel() {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        lblNom.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        lblNom.setText("Bosapin");
+        tablePersonnel.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Nom", "Prenom", "Role", "Mdp"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
 
-        lblRole1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        lblRole1.setText("sec");
-
-        jLabel7.setText("*******");
-
-        lblPrenom.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        lblPrenom.setText("Edmond");
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tablePersonnel);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -191,25 +198,15 @@ public TableModel initTableModel() {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblNom, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblPrenom, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(lblRole1)
-                .addGap(47, 47, 47)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblNom)
-                    .addComponent(lblRole1)
-                    .addComponent(jLabel7)
-                    .addComponent(lblPrenom))
-                .addContainerGap(177, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -237,10 +234,9 @@ public TableModel initTableModel() {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAjouterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAjouterActionPerformed
-        try{
-            GestionPersonnelController.get().ajouter();            
-        }
-        catch (Exception e1){
+        try {
+            GestionPersonnelController.get().ajouter();
+        } catch (Exception e1) {
             e1.printStackTrace();
         }
     }//GEN-LAST:event_btnAjouterActionPerformed
@@ -287,11 +283,9 @@ public TableModel initTableModel() {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JLabel lblNom;
-    private javax.swing.JLabel lblPrenom;
-    private javax.swing.JLabel lblRole1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tablePersonnel;
     // End of variables declaration//GEN-END:variables
 }
