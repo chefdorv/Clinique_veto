@@ -18,7 +18,7 @@ public class PersonnelDAOjdbcImpl implements PersonnelsDAO {
     private static final String sqlLogin = "SELECT Role from Personnels where Nom ='%1s' AND MotPasse = '%2s'";
     private static final String sqlRead = "SELECT * from Personnels where CodePers = %1d ";
     private static final String sqlAll = "SELECT * from Personnels";
-    private static final String sqlCreate = "INSERT INTO Personnels(Nom,MotPasse,Role,Archive) VALUES (?,?,?,?)";
+    private static final String sqlInsert = "INSERT INTO Personnels(Nom,MotPasse,Role,Archive) VALUES (?,?,?,?)";
     private static final String sqlId = "SELECT CodePers from Personnels where Nom = '%1s' ";
     private static final String sqlUpdate = "UPDATE Personnels SET Nom = '%1s',MotPasse = '%2',Role = '%3',Archive = '%4' WHERE Personnels.CodePers = %5 ";
     private static final String sqlDelete = "delete from Personnels where role=?";
@@ -235,13 +235,13 @@ public class PersonnelDAOjdbcImpl implements PersonnelsDAO {
     }
 
     @Override
-    public void create(Personnel data) throws DALException {
+    public void insert(Personnel data) throws DALException {
         Connection cnx = null;
         PreparedStatement rqt = null;
         ResultSet rs = null;
         try {
             cnx = JdbcTools.getConnection();
-            rqt = cnx.prepareStatement(sqlCreate);
+            rqt = cnx.prepareStatement(sqlInsert);
             rqt.setString(1, data.getNom());
             rqt.setString(2, data.getMdp());
             rqt.setString(3, data.getRole());

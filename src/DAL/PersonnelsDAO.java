@@ -9,7 +9,7 @@ public interface PersonnelsDAO extends DAO<Personnel> {
 
     public List<Personnel> selectAll() throws DALException, BLLException;
     
-    public Personnel insert(Personnel personnel) throws DALException, BLLException;
+    public void insert(Personnel personnel) throws DALException;
 
     public String Login(String name, String password) throws DALException, BLLException;
 }

@@ -19,8 +19,14 @@ public class EcranAccueil extends javax.swing.JFrame {
      */
     
     private Personnel user;
+    private LoginController loginController;
             
     public EcranAccueil() {
+        initComponents();
+    }
+    
+    public EcranAccueil(LoginController loginController) {
+        this.loginController = loginController;       
         initComponents();
     }
 
