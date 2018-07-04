@@ -103,7 +103,10 @@ public class EcranConnexion extends javax.swing.JFrame {
 
     private void actionBtnValider(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actionBtnValider
                 try {
-                    LoginController.get().connexion(txtNom, txtMdp);
+                    if (LoginController.get().connexion(txtNom, txtMdp)) {
+                          this.dispose();      
+                    }
+                            
                 } catch (BLLException e1) {
                     e1.printStackTrace();
                 }

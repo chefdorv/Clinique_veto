@@ -16,6 +16,9 @@
               <Properties>
                 <Property name="label" type="java.lang.String" value="D&#xe9;connexion"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuItemDeconnexionActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="menuItemFermer">
               <Properties>
@@ -58,13 +61,23 @@
             </Property>
           </Properties>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="menuGestionPersonnel">
+        <Menu class="javax.swing.JMenu" name="menuPersonnel">
           <Properties>
-            <Property name="label" type="java.lang.String" value="Gestion du personnel"/>
+            <Property name="text" type="java.lang.String" value="Personnel"/>
             <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
               <Insets value="[0, 5, 0, 5]"/>
             </Property>
           </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="menuItemGestionPersonnel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Gestion du personnel"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuItemGestionPersonnelActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
         </Menu>
       </SubComponents>
     </Menu>

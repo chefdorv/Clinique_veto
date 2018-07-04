@@ -59,7 +59,7 @@ public class LoginController {
     }
 
 
-    public void connexion(JTextField txtNom, JPasswordField mdp) throws BLLException {
+    public boolean connexion(JTextField txtNom, JPasswordField mdp) throws BLLException {
         System.out.println(txtNom.getText());
         System.out.println(mdp.getText());
 
@@ -75,11 +75,12 @@ public class LoginController {
         if (isPresent) {
             System.out.println("ok");
 
-            ecranAccueil = new EcranAccueil(persoConnected);
+            ecranAccueil = new EcranAccueil(this, persoConnected);
             ecranAccueil.setVisible(true);
-            ecranConnexion.setVisible(false);
+            return true;
         } else
             System.out.println("wrong credentials");
+        return false;
     }
 
     public void deconnexion() {

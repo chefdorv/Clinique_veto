@@ -7,6 +7,7 @@ package IHM;
 
 import BLL.LoginController;
 import BO.Personnel;
+import IHM.Personnel.EcranGestionPersonnel;
 
 /**
  *
@@ -25,13 +26,9 @@ public class EcranAccueil extends javax.swing.JFrame {
         initComponents();
     }
     
-    public EcranAccueil(LoginController loginController) {
-        this.loginController = loginController;       
+    public EcranAccueil(LoginController loginController, Personnel user) {
         initComponents();
-    }
-
-    public EcranAccueil(Personnel user) {
-        initComponents();
+        this.loginController = loginController; 
         this.user = user;
         this.labelUser.setText(user.getNom());
     }
@@ -54,7 +51,8 @@ public class EcranAccueil extends javax.swing.JFrame {
         menuItemPriseDeRDV = new javax.swing.JMenuItem();
         menuItemGestionDesClients = new javax.swing.JMenuItem();
         menuAgenda = new javax.swing.JMenu();
-        menuGestionPersonnel = new javax.swing.JMenu();
+        menuPersonnel = new javax.swing.JMenu();
+        menuItemGestionPersonnel = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(800, 400));
@@ -65,6 +63,11 @@ public class EcranAccueil extends javax.swing.JFrame {
         menuFichier.setMargin(new java.awt.Insets(0, 5, 0, 5));
 
         menuItemDeconnexion.setLabel("Déconnexion");
+        menuItemDeconnexion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemDeconnexionActionPerformed(evt);
+            }
+        });
         menuFichier.add(menuItemDeconnexion);
 
         menuItemFermer.setLabel("Fermer");
@@ -97,9 +100,18 @@ public class EcranAccueil extends javax.swing.JFrame {
         menuAgenda.setMargin(new java.awt.Insets(0, 5, 0, 5));
         jMenuBar.add(menuAgenda);
 
-        menuGestionPersonnel.setLabel("Gestion du personnel");
-        menuGestionPersonnel.setMargin(new java.awt.Insets(0, 5, 0, 5));
-        jMenuBar.add(menuGestionPersonnel);
+        menuPersonnel.setText("Personnel");
+        menuPersonnel.setMargin(new java.awt.Insets(0, 5, 0, 5));
+
+        menuItemGestionPersonnel.setText("Gestion du personnel");
+        menuItemGestionPersonnel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemGestionPersonnelActionPerformed(evt);
+            }
+        });
+        menuPersonnel.add(menuItemGestionPersonnel);
+
+        jMenuBar.add(menuPersonnel);
 
         setJMenuBar(jMenuBar);
 
@@ -128,6 +140,14 @@ public class EcranAccueil extends javax.swing.JFrame {
     private void menuItemFermerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemFermerActionPerformed
         System.exit(0);
     }//GEN-LAST:event_menuItemFermerActionPerformed
+
+    private void menuItemGestionPersonnelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemGestionPersonnelActionPerformed
+        new EcranGestionPersonnel().setVisible(true);
+    }//GEN-LAST:event_menuItemGestionPersonnelActionPerformed
+
+    private void menuItemDeconnexionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemDeconnexionActionPerformed
+        loginController.deconnexion();
+    }//GEN-LAST:event_menuItemDeconnexionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -170,10 +190,11 @@ public class EcranAccueil extends javax.swing.JFrame {
     private javax.swing.JLabel labelUser;
     private javax.swing.JMenu menuAgenda;
     private javax.swing.JMenu menuFichier;
-    private javax.swing.JMenu menuGestionPersonnel;
     private javax.swing.JMenuItem menuItemDeconnexion;
     private javax.swing.JMenuItem menuItemFermer;
     private javax.swing.JMenuItem menuItemGestionDesClients;
+    private javax.swing.JMenuItem menuItemGestionPersonnel;
     private javax.swing.JMenuItem menuItemPriseDeRDV;
+    private javax.swing.JMenu menuPersonnel;
     // End of variables declaration//GEN-END:variables
 }
