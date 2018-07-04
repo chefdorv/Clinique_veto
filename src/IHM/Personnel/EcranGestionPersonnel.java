@@ -10,9 +10,11 @@ import IHM.GestionPersonnelController;
 import BLL.GestionPersonnelManager;
 import BO.Personnel;
 import DAL.DALException;
+import static com.sun.xml.internal.fastinfoset.alphabet.BuiltInRestrictedAlphabets.table;
 import java.util.List;
 import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
 /**
@@ -26,6 +28,7 @@ public class EcranGestionPersonnel extends javax.swing.JFrame {
      */
     public EcranGestionPersonnel() {
         initComponents();
+        GenerationTableau();
     }
 
     public EcranGestionPersonnel(GestionPersonnelController gestionPersonnelController) {
@@ -33,57 +36,24 @@ public class EcranGestionPersonnel extends javax.swing.JFrame {
         initComponents();
     }
 
-    public TableModel initTableModel() {
-        String[] personnels = {"Nom", "Prenom", "Role", "Mdp"};
-        TableModel dataModel = new AbstractTableModel() {
-            
-            public int getColumnCount() {
-                return 4;
+    public void GenerationTableau() {
+        try {
+            GestionPersonnelManager pm = new GestionPersonnelManager();
+            List<Personnel> lstPers = new ArrayList<Personnel>();
+            lstPers = pm.getListePersonnels();
+            DefaultTableModel model = new DefaultTableModel();
+            model.addColumn("Nom");
+            model.addColumn("Prenom");
+            model.addColumn("Role");
+            model.addColumn("Mdp");
+            for (Personnel pers : lstPers) {
+                model.addRow(new Object[]{pers.getNom(), pers.getPrenom(), pers.getRole(), pers.getMdp()});
             }
-
-            public int getRowCount() {
-                int cnt = 0;
-                try {
-                    GestionPersonnelManager pm = new GestionPersonnelManager();
-                    cnt = pm.getListePersonnels().size();
-                } catch (BLLException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
-                return cnt;
-            }
-
-            @Override
-            public String getColumnName(int index) {
-                return personnels[index];
-            }
-
-            public Object getValueAt(int row, int col) {
-                try {
-                    GestionPersonnelManager pm = new GestionPersonnelManager();
-                    List<Personnel> lstPerso = new ArrayList<Personnel>();
-                    lstPerso = pm.getListePersonnels();
-                    switch (col) {
-                        case 0:
-                            return lstPerso.get(row).getNom();
-                        case 1:
-                            return lstPerso.get(row).getPrenom();
-                        case 2:
-                            return lstPerso.get(row).getRole();
-                        case 3:
-                            return lstPerso.get(row).getMdp();
-                        default:
-                            break;
-                    }
-                } catch (BLLException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
-
-                return "erreur";
-            }
-        };
-        return dataModel;
+            this.tablePersonnel.setModel(model);
+        } catch (BLLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -104,7 +74,7 @@ public class EcranGestionPersonnel extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tablePersonnel = new javax.swing.JTable(initTableModel());
+        tablePersonnel = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Gestion du personnel");
