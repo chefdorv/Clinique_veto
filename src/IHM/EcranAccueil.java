@@ -62,6 +62,11 @@ public class EcranAccueil extends javax.swing.JFrame {
         menuFichier.add(menuItemDeconnexion);
 
         menuItemFermer.setLabel("Fermer");
+        menuItemFermer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemFermerActionPerformed(evt);
+            }
+        });
         menuFichier.add(menuItemFermer);
 
         jMenuBar.add(menuFichier);
@@ -113,6 +118,10 @@ public class EcranAccueil extends javax.swing.JFrame {
     private void menuItemPriseDeRDVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemPriseDeRDVActionPerformed
         new EcranPriseRDV().setVisible(true);
     }//GEN-LAST:event_menuItemPriseDeRDVActionPerformed
+
+    private void menuItemFermerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemFermerActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_menuItemFermerActionPerformed
 
     /**
      * @param args the command line arguments
