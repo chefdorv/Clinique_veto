@@ -76,6 +76,11 @@ public class EcranAccueil extends javax.swing.JFrame {
         jMenu1.setMargin(new java.awt.Insets(0, 5, 0, 5));
 
         menuItemPriseDeRDV.setText("Prise de rendez-vous");
+        menuItemPriseDeRDV.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemPriseDeRDVActionPerformed(evt);
+            }
+        });
         jMenu1.add(menuItemPriseDeRDV);
 
         menuItemGestionDesClients.setText("Gestion des clients");
@@ -110,6 +115,10 @@ public class EcranAccueil extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void menuItemPriseDeRDVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemPriseDeRDVActionPerformed
+        new EcranPriseRDV().setVisible(true);
+    }//GEN-LAST:event_menuItemPriseDeRDVActionPerformed
 
     /**
      * @param args the command line arguments
