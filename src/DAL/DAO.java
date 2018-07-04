@@ -2,7 +2,7 @@ package DAL;
 
 public interface DAO<T> {
 
-    public void create(T data) throws DALException;
+    public void insert (T data) throws DALException;
 
     // Sélectionner un business object par son id
     public T read(int id) throws DALException;

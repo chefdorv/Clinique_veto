@@ -5,11 +5,15 @@
  */
 package IHM.Personnel;
 
+import IHM.GestionPersonnelController;
+
 /**
  *
  * @author epenanchoat2017
  */
 public class AjouterPersonnel extends javax.swing.JFrame {
+    
+    private GestionPersonnelController gestionPersonnelController;
 
     /**
      * Creates new form AjouterPersonnel
@@ -17,6 +21,12 @@ public class AjouterPersonnel extends javax.swing.JFrame {
     public AjouterPersonnel() {
         initComponents();
     }
+    
+    public AjouterPersonnel(GestionPersonnelController gestionPersonnelController) {
+        this.gestionPersonnelController = gestionPersonnelController;
+        initComponents();
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.

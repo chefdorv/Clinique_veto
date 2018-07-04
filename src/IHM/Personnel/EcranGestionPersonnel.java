@@ -177,7 +177,7 @@ public class EcranGestionPersonnel extends javax.swing.JFrame {
 
     private void btnAjouterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAjouterActionPerformed
         try{
-            GestionPersonnelController.ajouter();            
+            GestionPersonnelController.get().ajouter();            
         }
         catch (Exception e1){
             e1.printStackTrace();

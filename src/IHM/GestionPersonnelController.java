@@ -53,10 +53,10 @@ public class GestionPersonnelController {
     return instance;
     }
     
-    public void affichageEcranAccueil() {
+    /*public void affichageEcranAccueil() {
         ecranAccueil = new EcranAccueil(this);
         ecranAccueil.setVisible(true);
-    }
+    }*/
 
     public void affichageEcranGestionPersonnel() {
         if (ecranGestionPersonnel == null)
