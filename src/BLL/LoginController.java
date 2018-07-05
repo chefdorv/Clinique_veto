@@ -66,7 +66,7 @@ public class LoginController {
         isPresent = false;
         for (Personnel personne : listePersonnels) {
 
-            if (personne.getNom().equals(txtNom.getText()) && personne.getMdp().equals(mdp.getText())) {
+            if (personne.getNom().equalsIgnoreCase(txtNom.getText()) && personne.getMdp().equals(mdp.getText())) {
                 isPresent = true;
                 persoConnected = personne;
                 break;

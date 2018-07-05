@@ -21,7 +21,9 @@ public class EcranAccueil extends javax.swing.JFrame {
     
     private Personnel user;
     private LoginController loginController;
-            
+    private Integer sexe;
+    private String user1 = "Connecté en tant que : ";
+    private String user2 = "Connectée en tant que : ";            
     public EcranAccueil() {
         initComponents();
     }
@@ -30,7 +32,17 @@ public class EcranAccueil extends javax.swing.JFrame {
         initComponents();
         this.loginController = loginController; 
         this.user = user;
-        this.labelUser.setText(user.getNom());
+        this.lblPrenom.setText(user.getPrenom());
+        this.lblUserNom.setText(user.getNom());
+        sexe = user.getSexe();
+        if (sexe == 1) {
+            this.lblUserCnx.setText(user1);                        
+        }
+        else {
+            this.lblUserCnx.setText(user2);
+        }
+       
+    
     }
 
     /**
@@ -42,7 +54,9 @@ public class EcranAccueil extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        labelUser = new javax.swing.JLabel();
+        lblUserCnx = new javax.swing.JLabel();
+        lblPrenom = new javax.swing.JLabel();
+        lblUserNom = new javax.swing.JLabel();
         jMenuBar = new javax.swing.JMenuBar();
         menuFichier = new javax.swing.JMenu();
         menuItemDeconnexion = new javax.swing.JMenuItem();
@@ -57,7 +71,11 @@ public class EcranAccueil extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(800, 400));
 
-        labelUser.setText("labelUser");
+        lblUserCnx.setText("lblUser");
+
+        lblPrenom.setText("Prénom");
+
+        lblUserNom.setText("Nom");
 
         menuFichier.setText("Fichier");
         menuFichier.setMargin(new java.awt.Insets(0, 5, 0, 5));
@@ -119,15 +137,24 @@ public class EcranAccueil extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 756, Short.MAX_VALUE)
-                .addComponent(labelUser))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblUserCnx)
+                .addGap(18, 18, 18)
+                .addComponent(lblPrenom)
+                .addGap(18, 18, 18)
+                .addComponent(lblUserNom)
+                .addContainerGap(657, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 416, Short.MAX_VALUE)
-                .addComponent(labelUser))
+                .addGap(23, 23, 23)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblUserCnx)
+                    .addComponent(lblPrenom)
+                    .addComponent(lblUserNom))
+                .addContainerGap(393, Short.MAX_VALUE))
         );
 
         pack();
@@ -187,7 +214,9 @@ public class EcranAccueil extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar;
-    private javax.swing.JLabel labelUser;
+    private javax.swing.JLabel lblPrenom;
+    private javax.swing.JLabel lblUserCnx;
+    private javax.swing.JLabel lblUserNom;
     private javax.swing.JMenu menuAgenda;
     private javax.swing.JMenu menuFichier;
     private javax.swing.JMenuItem menuItemDeconnexion;

@@ -6,13 +6,13 @@ public class Secretaire extends Personnel {
         // TODO Auto-generated constructor stub
     }
 
-    public Secretaire(int codePersonnel, String nom, String prenom, String motPasse, String role, boolean archive) {
-        super(codePersonnel, nom, prenom, motPasse, role, archive);
+    public Secretaire(int codePersonnel, String nom, String prenom, String motPasse, String role, Integer sexe, boolean archive) {
+        super(codePersonnel, nom, prenom, motPasse, role, sexe, archive);
         // TODO Auto-generated constructor stub
     }
 
-    public Secretaire(String nom, String prenom, String motPasse, String role, boolean archive) {
-        super(nom, prenom, motPasse, role, archive);
+    public Secretaire(String nom, String prenom, String motPasse, String role, Integer sexe, boolean archive) {
+        super(nom, prenom, motPasse, role, sexe, archive);
         // TODO Auto-generated constructor stub
     }
 }
