@@ -22,8 +22,8 @@ public class EcranAccueil extends javax.swing.JFrame {
     private Personnel user;
     private LoginController loginController;
     private Integer sexe;
-    private String user1 = "Connecté en tant que : ";
-    private String user2 = "Connectée en tant que : ";            
+    private final String user1 = "Connecté en tant que : ";
+    private final String user2 = "Connectée en tant que : ";     
     public EcranAccueil() {
         initComponents();
     }
@@ -33,7 +33,7 @@ public class EcranAccueil extends javax.swing.JFrame {
         this.loginController = loginController; 
         this.user = user;
         this.lblPrenom.setText(user.getPrenom());
-        this.lblUserNom.setText(user.getNom());
+        this.lblNom.setText(user.getNom());
         sexe = user.getSexe();
         if (sexe == 1) {
             this.lblUserCnx.setText(user1);                        
@@ -56,7 +56,7 @@ public class EcranAccueil extends javax.swing.JFrame {
 
         lblUserCnx = new javax.swing.JLabel();
         lblPrenom = new javax.swing.JLabel();
-        lblUserNom = new javax.swing.JLabel();
+        lblNom = new javax.swing.JLabel();
         jMenuBar = new javax.swing.JMenuBar();
         menuFichier = new javax.swing.JMenu();
         menuItemDeconnexion = new javax.swing.JMenuItem();
@@ -73,9 +73,9 @@ public class EcranAccueil extends javax.swing.JFrame {
 
         lblUserCnx.setText("lblUser");
 
-        lblPrenom.setText("Prénom");
+        lblPrenom.setText("prenom");
 
-        lblUserNom.setText("Nom");
+        lblNom.setText("nom");
 
         menuFichier.setText("Fichier");
         menuFichier.setMargin(new java.awt.Insets(0, 5, 0, 5));
@@ -142,9 +142,9 @@ public class EcranAccueil extends javax.swing.JFrame {
                 .addComponent(lblUserCnx)
                 .addGap(18, 18, 18)
                 .addComponent(lblPrenom)
-                .addGap(18, 18, 18)
-                .addComponent(lblUserNom)
-                .addContainerGap(657, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblNom)
+                .addContainerGap(665, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,7 +153,7 @@ public class EcranAccueil extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblUserCnx)
                     .addComponent(lblPrenom)
-                    .addComponent(lblUserNom))
+                    .addComponent(lblNom))
                 .addContainerGap(393, Short.MAX_VALUE))
         );
 
@@ -214,9 +214,9 @@ public class EcranAccueil extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar;
+    private javax.swing.JLabel lblNom;
     private javax.swing.JLabel lblPrenom;
     private javax.swing.JLabel lblUserCnx;
-    private javax.swing.JLabel lblUserNom;
     private javax.swing.JMenu menuAgenda;
     private javax.swing.JMenu menuFichier;
     private javax.swing.JMenuItem menuItemDeconnexion;

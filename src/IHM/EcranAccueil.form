@@ -113,9 +113,9 @@
               <Component id="lblUserCnx" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="lblPrenom" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="lblUserNom" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="657" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="lblNom" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="665" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -126,7 +126,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblUserCnx" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblPrenom" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblUserNom" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblNom" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="393" max="32767" attributes="0"/>
           </Group>
@@ -141,12 +141,12 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblPrenom">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Pr&#xe9;nom"/>
+        <Property name="text" type="java.lang.String" value="prenom"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblUserNom">
+    <Component class="javax.swing.JLabel" name="lblNom">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Nom"/>
+        <Property name="text" type="java.lang.String" value="nom"/>
       </Properties>
     </Component>
   </SubComponents>
