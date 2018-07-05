@@ -6,25 +6,28 @@ public class Personnel {
     private String prenom;
     private String mdp;
     private String role;
+    private Integer sexe;
     private Boolean archive;
 
     public Personnel() {
     }
 
-    public Personnel(Integer code, String nom, String prenom, String mdp, String role, Boolean archive) {
+    public Personnel(Integer code, String nom, String prenom, String mdp, String role, Integer sexe, Boolean archive) {
         this.code = code;
         this.nom = nom;
         this.prenom = prenom;
         this.mdp = mdp;
         this.role = role;
+        this.sexe = sexe;
         this.archive = archive;
     }
 
-    public Personnel(String nom, String prenom, String mdp, String role, Boolean archive) {
+    public Personnel(String nom, String prenom, String mdp, String role, Integer sexe, Boolean archive) {
         this.nom = nom;
         this.prenom = prenom;
         this.mdp = mdp;
         this.role = role;
+        this.sexe = sexe;
         this.archive = archive;
     }
 
@@ -67,6 +70,14 @@ public class Personnel {
     public void setRole(String role) {
         this.role = role;
     }
+    
+        public Integer getSexe() {
+        return sexe;
+    }
+
+    public void setSexe(Integer sexe) {
+        this.sexe = sexe;
+    }
 
     public Boolean getArchive() {
         return archive;
@@ -78,8 +89,8 @@ public class Personnel {
 
     @Override
     public String toString() {
-        return "Personnels [CodePerso=" + code + ", Nom=" + nom + ", Prenom=" + prenom + ", MotPasse=" + mdp + ", Role=" + role
-                + ", Archive=" + archive + "]";
+        return "Personnels [CodePerso = " + code + ", Nom=" + nom + ", Prenom=" + prenom + ", MotPasse=" + mdp + ", Role=" + role
+                + ", Sexe=" + sexe + ", Archive=" + archive + "]";
     }
 
     // ------------------------S'authentifier----------------------
