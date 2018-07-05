@@ -377,13 +377,13 @@
                   <Data value="Beige"/>
                   <Data value="Noir profond"/>
                 </Column>
-                <Column editable="true" title="Race" type="java.lang.Object">
+                <Column editable="true" title="Esp&#xe8;ce" type="java.lang.Object">
                   <Data value="Chien"/>
                   <Data value="Mouche"/>
                   <Data value="L&#xe9;zard"/>
                   <Data value="Chat"/>
                 </Column>
-                <Column editable="true" title="Esp&#xe8;ce" type="java.lang.Object">
+                <Column editable="true" title="Race" type="java.lang.Object">
                   <Data value="Colet"/>
                   <Data value="Bombyle"/>
                   <Data value="Maur&#xe9;tanie"/>

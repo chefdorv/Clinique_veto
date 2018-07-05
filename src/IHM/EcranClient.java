@@ -160,7 +160,7 @@ public class EcranClient extends javax.swing.JFrame {
                 {"63418", "Neige", "F", "Noir profond", "Chat", "Persan", null}
             },
             new String [] {
-                "Numéro", "Nom", "Sexe", "Couleur", "Race", "Espèce", "Tatouage"
+                "Numéro", "Nom", "Sexe", "Couleur", "Espèce", "Race", "Tatouage"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
