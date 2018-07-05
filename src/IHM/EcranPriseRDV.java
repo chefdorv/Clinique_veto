@@ -5,6 +5,14 @@
  */
 package IHM;
 
+import BLL.BLLException;
+import BLL.GestionPersonnelManager;
+import BO.Personnel;
+import BO.Rdv;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Administrateur
@@ -18,6 +26,26 @@ public class EcranPriseRDV extends javax.swing.JFrame {
         initComponents();
     }
 
+    public void GenerationTableau() {
+        try {
+            GestionPersonnelManager pm = new GestionPersonnelManager();
+            List<Rdv> lstPers = new ArrayList<Rdv>();
+            lstPers = pm.getListePersonnels();
+            DefaultTableModel model = new DefaultTableModel();
+            model.addColumn("Heure");
+            model.addColumn("Nom du client");
+            model.addColumn("Animal");
+            model.addColumn("Race");
+            for (Personnel pers : lstPers) {
+                model.addRow(new Object[]{pers.getNom(), pers.getPrenom(), pers.getRole(), pers.getMdp()});
+            }
+            this.tableRdv.setModel(model);
+        } catch (BLLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

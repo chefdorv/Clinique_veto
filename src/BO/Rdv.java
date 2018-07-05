@@ -46,9 +46,7 @@ public class Rdv {
         this.animal = animal;
         this.dateRdv = dateRdv;
     }
-
-
-
+    
     public Rdv(Veterinaire veterinaire, Animal animal, LocalDateTime dateRdv, Client client) {
         super();
         this.veterinaire = veterinaire;
@@ -56,6 +54,15 @@ public class Rdv {
         this.dateRdv = dateRdv;
         this.client = client;
     }
+    
+    public Rdv(Animal animal, LocalDateTime dateRdv) {
+        super();
+        this.veterinaire = veterinaire;
+        this.animal = animal;
+        this.dateRdv = dateRdv;
+    }
+    
+    
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();

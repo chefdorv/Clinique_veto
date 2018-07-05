@@ -4,10 +4,18 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Administrateur/Desktop/workspace/Clinique_veto/src/DAL/JdbcTools.java</file>
+            <file>file:/C:/Users/Administrateur/Desktop/workspace/Clinique_veto/src/BO/Admin.java</file>
+            <file>file:/C:/Users/Administrateur/Desktop/workspace/Clinique_veto/src/DAL/RdvDAO.java</file>
+            <file>file:/C:/Users/Administrateur/Desktop/workspace/Clinique_veto/src/BO/Animal.java</file>
+            <file>file:/C:/Users/Administrateur/Desktop/workspace/Clinique_veto/src/BLL/GestionRdvManager.java</file>
+            <file>file:/C:/Users/Administrateur/Desktop/workspace/Clinique_veto/src/DAL/jdbc/RdvDAOjdbcImpl.java</file>
+            <file>file:/C:/Users/Administrateur/Desktop/workspace/Clinique_veto/src/BO/Rdv.java</file>
             <file>file:/C:/Users/Administrateur/Desktop/workspace/Clinique_veto/src/IHM/Personnel/EcranGestionPersonnel.java</file>
-            <file>file:/C:/Users/Administrateur/Desktop/workspace/Clinique_veto/src/BLL/LoginManager.java</file>
             <file>file:/C:/Users/Administrateur/Desktop/workspace/Clinique_veto/src/DAL/jdbc/PersonnelDAOjdbcImpl.java</file>
-            <file>file:/C:/Users/Administrateur/Desktop/workspace/Clinique_veto/src/BLL/LoginController.java</file>
+            <file>file:/C:/Users/Administrateur/Desktop/workspace/Clinique_veto/src/DAL/PersonnelsDAO.java</file>
+            <file>file:/C:/Users/Administrateur/Desktop/workspace/Clinique_veto/src/IHM/EcranPriseRDV.java</file>
+            <file>file:/C:/Users/Administrateur/Desktop/workspace/Clinique_veto/src/DAL/DALException.java</file>
+            <file>file:/C:/Users/Administrateur/Desktop/workspace/Clinique_veto/src/DAL/DAO.java</file>
         </group>
     </open-files>
 </project-private>

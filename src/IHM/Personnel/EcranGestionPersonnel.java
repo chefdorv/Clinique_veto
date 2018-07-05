@@ -34,6 +34,7 @@ public class EcranGestionPersonnel extends javax.swing.JFrame {
     public EcranGestionPersonnel(GestionPersonnelController gestionPersonnelController) {
         gestionPersonnelController = gestionPersonnelController;
         initComponents();
+        GenerationTableau();
     }
 
     public void GenerationTableau() {
