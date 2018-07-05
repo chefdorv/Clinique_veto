@@ -3,11 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Ws/Clinique_veto/src/IHM/Personnel/AjouterPersonnel.java</file>
-            <file>file:/C:/Ws/Clinique_veto/src/IHM/Personnel/EcranGestionPersonnel.java</file>
-            <file>file:/C:/Ws/Clinique_veto/src/DAL/PersonnelsDAO.java</file>
-            <file>file:/C:/Ws/Clinique_veto/src/IHM/GestionPersonnelController.java</file>
-            <file>file:/C:/Ws/Clinique_veto/src/BLL/GestionPersonnelManager.java</file>
+            <file>file:/C:/Users/Administrateur/Desktop/workspace/Clinique_veto/src/DAL/JdbcTools.java</file>
+            <file>file:/C:/Users/Administrateur/Desktop/workspace/Clinique_veto/src/IHM/Personnel/EcranGestionPersonnel.java</file>
+            <file>file:/C:/Users/Administrateur/Desktop/workspace/Clinique_veto/src/BLL/LoginManager.java</file>
+            <file>file:/C:/Users/Administrateur/Desktop/workspace/Clinique_veto/src/DAL/jdbc/PersonnelDAOjdbcImpl.java</file>
+            <file>file:/C:/Users/Administrateur/Desktop/workspace/Clinique_veto/src/BLL/LoginController.java</file>
         </group>
     </open-files>
 </project-private>
