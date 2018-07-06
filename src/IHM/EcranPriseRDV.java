@@ -24,27 +24,7 @@ public class EcranPriseRDV extends javax.swing.JFrame {
      */
     public EcranPriseRDV() {
         initComponents();
-    }
-
-    public void GenerationTableau() {
-        try {
-            GestionPersonnelManager pm = new GestionPersonnelManager();
-            List<Rdv> lstPers = new ArrayList<Rdv>();
-            lstPers = pm.getListePersonnels();
-            DefaultTableModel model = new DefaultTableModel();
-            model.addColumn("Heure");
-            model.addColumn("Nom du client");
-            model.addColumn("Animal");
-            model.addColumn("Race");
-            for (Personnel pers : lstPers) {
-                model.addRow(new Object[]{pers.getNom(), pers.getPrenom(), pers.getRole(), pers.getMdp()});
-            }
-            this.tableRdv.setModel(model);
-        } catch (BLLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-    }
+    }    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -81,7 +61,6 @@ public class EcranPriseRDV extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel1.setText("Client :");
-        jLabel1.setPreferredSize(new java.awt.Dimension(38, 16));
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel2.setText("Animal :");
@@ -100,7 +79,7 @@ public class EcranPriseRDV extends javax.swing.JFrame {
             .addGroup(panelRdvPourLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelRdvPourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1)
                     .addComponent(jLabel2)
                     .addComponent(comboBoxClient, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(comboBoxAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -110,7 +89,7 @@ public class EcranPriseRDV extends javax.swing.JFrame {
             panelRdvPourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRdvPourLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(comboBoxClient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -209,7 +188,7 @@ public class EcranPriseRDV extends javax.swing.JFrame {
 
         tableRdv.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
+                {"10:00", "Bob", "Garry", "Escargot"},
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null}
