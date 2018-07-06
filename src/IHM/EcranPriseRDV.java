@@ -52,6 +52,8 @@ public class EcranPriseRDV extends javax.swing.JFrame {
         textFieldDate = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableRdv = new javax.swing.JTable();
+        buttonValider = new javax.swing.JButton();
+        buttonSupprimer = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -214,6 +216,10 @@ public class EcranPriseRDV extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tableRdv);
 
+        buttonValider.setText("Valider");
+
+        buttonSupprimer.setText("Supprimer");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -228,7 +234,12 @@ public class EcranPriseRDV extends javax.swing.JFrame {
                         .addComponent(panelRdvPar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(panelRdvQuand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(buttonSupprimer)
+                        .addGap(18, 18, 18)
+                        .addComponent(buttonValider)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -240,8 +251,12 @@ public class EcranPriseRDV extends javax.swing.JFrame {
                     .addComponent(panelRdvPar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(panelRdvPour, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonValider)
+                    .addComponent(buttonSupprimer))
+                .addContainerGap())
         );
 
         pack();
@@ -283,6 +298,8 @@ public class EcranPriseRDV extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonSupprimer;
+    private javax.swing.JButton buttonValider;
     private javax.swing.JComboBox<String> comboBoxAnimal;
     private javax.swing.JComboBox<String> comboBoxClient;
     private javax.swing.JComboBox<String> comboBoxHeure;
